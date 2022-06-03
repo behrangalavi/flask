@@ -3,7 +3,7 @@ import os
 import psycopg2
 
 conn = psycopg2.connect(
-        host="postgresql-sflzu7",
+        host=os.environ['DB_HOST'],
         database="postgres_db",
         user=os.environ['DB_USERNAME'],
         password=os.environ['DB_PASSWORD'])

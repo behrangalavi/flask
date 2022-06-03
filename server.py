@@ -1,4 +1,16 @@
 from flask import Flask
+import os
+import psycopg2
+
+conn = psycopg2.connect(
+        host="postgresql-sflzu7",
+        database="postgres_db",
+        user=os.environ['DB_USERNAME'],
+        password=os.environ['DB_PASSWORD'])
+
+# Open a cursor to perform database operations
+cur = conn.cursor()
+
 server = Flask(__name__)
 
 @server.route("/")
